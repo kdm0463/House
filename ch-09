@@ -1,6 +1,43 @@
 원격 저장소
 깃허브(github)
+
 원격 저장소를 지역 저장소에 복제(clone)
-공개된 저장소는 소유와 관계 없이 누구나 가능
-https://github.com/git
-비트버킷(bitbucket)
+
+깃허브 원격저장소 생성
+저장소이름 git-clone
+https 주소 복사
+
+$ git clone [복사된-주소]
+원격저장소와 동일한 이름으로 복제
+
+$ git clone [복사된-주소] [새로운-폴더명]
+하부 폴더[새로운-폴더명] 이름으로 복제
+
+$ git clone [복사된-주소] .
+현재 폴더에 바로 복제
+
+$ git remote
+원격 저장소 목록
+기본 이름 origin 점검
+위에서 clone을 했기 때문에 별칭 origin이 위의 주소가 설정
+
+$ git remote –v
+저장소 주소 등 원격 저장소 정보 목록 표시
+
+$ git remote add origin URL
+원격 저장소 별칭 저장
+
+$ git remote show origin
+자세한 정보
+
+$ git remote rename origin org
+이름 수정
+
+$ git remote rm org
+삭제
+
+유명 OSS
+1. vscode
+2. atom
+3. vcs 깃
+4. 구글 인공지능라이브러리
