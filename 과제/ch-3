@@ -1,0 +1,73 @@
+$ git add
+파일을 Working tree => Staging Area로 이동(복사)
+
+$ git commit
+Staging Area에 준비된 파일 => Git repository(버전관리)로 이동(복사)
+
+명령 git status
+깃 저장소의 현재 상태를 확인하려면 git status 명령을 사용
+$ git status [--long] 현재의 상태 표시, 기본 값(default value)
+$ git status [--short | -s] 현재의 상태를 간단히 표시
+$ git config --global --edit 도움말 보기
+
+untracked file  
+처음 만들어진 파일
+추적되지 않는 파일(untracked file)
+‘깃에 관리되지 않는 파일’의 의미
+
+$ git rm --cached <file> 
+인덱스인 Changes to be committed(커밋할 수정 내용)에서 삭제(이전 내용으로 수정)
+
+커밋(commit)
+버전 관리를 위해 현재 스테이지 영역의 내용에 대해 스냅샷(snap shot)을 찍는 명령
+커밋에는 이력을 관리하기 위해 반드시 커밋 메시지의 저장이 필요
+$ git commit 커밋 메시지를 입력할 기본 편집기 실행됨
+$ git commit -m ‘message' 커밋 메시지를 직접 입력 [-m | --message]
+$ git commit -a -m ‘message'
+추가와 커밋을 함께 실행 [-a | --all]
+$ git commit -am ‘message'
+
+커밋이 성공한 후 상태를 조회
+커밋할 것은 없고, 작업 트리는 깨끗한(clean) 상태
+
+$ git log 로그 이력 정보를 표시
+$ git log --oneline 로그 이력을 한 줄로 표시
+$ git log [--patch | -p] 로그 이력과 함께 파일의 변화(이전 커밋과의 차이)를 표시
+
+암호학의 SHA-1(Secure Hash Algorithm 1)
+f(key) = value
+160비트인 키는 40개의 16진수로 표현
+
+옵션 --oneline
+한 줄로 간략히 표시
+
+옵션 --patch 또는 -p
+커밋 정보 뿐 아니라 이전 커밋과 현재 커밋 파일의 차이가 표시
+
+커밋 정보 git show
+특정한 커밋 정보를 확인하려면 명령 git show를 사용
+$ git show 마지막 커밋(HEAD)의 커밋 정보 표시
+$ git show --oneline 커밋 로그 한 줄과 파일 차이 표시
+$ git show -s 파일 차이는 표시되지 않음
+$ git show [HEAD] 지정한 HEAD의 커밋 정보 표시
+$ git show [commitID] 지정한 commitID의 커밋 정보 표시
+
+명령 checkoout
+현재 브랜치에서 과거 커밋 HEAD~로 이동
+$ git checkout HEAD~ HEAD 이전 커밋으로 이동
+$ git checkout - 이전 checkout으로 이동
+$ git checkout main 브랜치의 마지막 커밋으로 이동
+
+$ git checkout HEAD~
+현재 상태가 깨끗해야 checkout이 가능
+떨어진 HEAD(detached HEAD) 상태
+프롬프트 브랜치 이름이 떨어진 HEAD 상태를 표시
+
+되돌아오기 git checkout
+브랜치 이름 main이나 - 사용
+
+
+
+
+  
+
