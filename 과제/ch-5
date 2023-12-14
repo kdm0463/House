@@ -1,0 +1,124 @@
+버전(version)
+프로그램을 수정하거나 개선할 때마다 코드를 구분하려고 부여된 식별자를 의미
+
+메이저(major) 번호
+• 첫 자리가 0으로 시작하면 아직 초기 개발 중인 제품이라는 의미
+• 정식 버전은 1부터 시작하는데 이를 메이저(major) 버전
+
+마이너(minor) 번호
+• 메이저 버전에서 기능을 추가하거나 변경 사항이 있을 때 바꿈
+
+패치(patch) 번호
+• 버그 수정 등 미미한 변화가 있을 때 바꿈
+
+주석 태그(Annotated tag)
+태그 이름 + 정보(태그 작성자 이메일, 태그 시각, 태그 메시지) 포함
+
+일반(가벼운) 태그(Lightweight tag)
+태그 이름만 포함
+
+$ git tag –a v1.0.0 –m ‘first version’
+작성한 사람의 이메일, 날짜, 메시지 등 정보 포함
+
+$ git tag –a v1.0.0
+기본 설정된 편집기로 메시지 편집
+
+$ git tag –a v1.1.0 commitID
+특정 커밋에 태그를 붙임
+
+일반 태그 생성
+태그의 버전 정보만 관리
+$ git tag v1.0.1
+태그 버전 이름 중복 불가능
+-a -m 사용 불가능
+
+$ git tag
+예전 태그부터 표시
+
+$ git show v1.0.0
+Annotated 태그의 여러 정보 표시
+
+태그 삭제
+$ git tag –d v1.0.0
+
+깃 브랜치
+파일 작성 작업을 하다 보면 여러 파일을 관리하는 폴더를 통째로 복사해 활용하는 일이 자주 발생
+버전 관리를 수행하던 일련의 파일 집합을 통째로 복사해 독립적으로 다시 개발을 진행하는 개념
+
+브랜치 병합(merge)
+독립된 브랜치에서 마음대로 소스 코드를 변경하여 작업한 후 원래 버전과 합칠 수 있음
+
+브랜치 사용 장점
+저장소에서 다른 브랜치에는 영향 없이
+-새로운 기능을 개발하거나 버그를 수정
+-새로운 아이디어를 안전하게 실험 가능
+
+브랜치
+커밋 사이를 가볍게 이동할 수 있는 포인터
+
+HEAD
+작업 중인 브랜치의 최신 커밋을 가리키는 포인터
+
+$ git branch bname
+브랜치 생성
+
+생성하고 새 브랜치로 HEAD 이동도 수행
+$ git switch –c bname
+$ git checkout –b bname
+
+$ git branch 커밋이 발생한 브랜치 목록 보이기
+$ git branch -v 브랜치마다 마지막 커밋 ID와 메시지도 함께 표시
+
+* main
+*은 현재 작업하고 있는 브랜치를 표시
+
+HEAD를 지정한 브랜치로 이동
+$ git switch [bname]
+$ git checkout [bname]
+
+HEAD를 이전 브랜치로 이동
+$ git switch -
+$ git checkout -
+
+$ git checkout HEAD~
+현재 브랜치에서 마지막 커밋 이전 커밋으로 이동
+
+이동 커밋
+상대적인 HEAD~ 또는 HEAD^^, commitID를 사용
+
+$ git switch main
+HEAD를 main으로 이동
+
+$ git checkout HEAD~
+HEAD를 하나 이전으로 이동
+
+$ git switch -c hotfix
+브랜치 hotfix 생성하고 HEAD 이동
+
+$ git checkout –b develop
+브랜치 develop 생성하고 HEAD 이동
+
+명령 branch에서 옵션 -D 또는 -d를 사용
+아직 병합되지 않은 브랜치라면 강제로 삭제하기 위해 옵션 -D를 사용
+  $ git branch [-d | --delete] [branchName] 지정한 branchName(이미 병합된)을 삭제
+  $ git branch -D [branchName] 지정한 branchName(병합되지 않더라도)을 삭제
+
+
+브랜치 목록 보기
+브랜치의 병합 여부를 옵션 --merged와 --no-merged로 확인 가능
+  $ git branch --merged -현재 작업 브랜치를 기준으로 병합된 브랜치 목록 표시
+  $ git branch --no-merged -현재 작업 브랜치를 기준으로 아직 병합되지 않은 브랜치 목록 표시
+  $ git branch --merged branchName -인자인 branchName 브랜치를 기준으로 병합된 브랜치 목록 표시
+  $ git branch --no-merged branchName -인자인 branchName 브랜치를 기준으로 아직 병합되지 않은 브랜치목록 표시
+
+
+
+
+
+
+
+
+
+
+
+  
